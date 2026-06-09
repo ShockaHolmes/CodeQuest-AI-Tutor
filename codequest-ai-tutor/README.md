@@ -119,6 +119,29 @@ On macOS, you can also double-click [start.command](/Users/shocka/CodeQuest-AI-T
 
 ---
 
+## Optional Voice Assistant (ElevenLabs)
+
+CodeQuest can read quiz and practice questions aloud using ElevenLabs text-to-speech.
+
+1. Create an ElevenLabs API key from your ElevenLabs account.
+2. Set the API key in your shell environment before starting the app.
+
+Mac/Linux:
+
+```bash
+export ELEVENLABS_API_KEY="your_api_key_here"
+```
+
+Optional voice selection:
+
+```bash
+export ELEVENLABS_VOICE_ID="21m00Tcm4TlvDq8ikWAM"
+```
+
+Then run the app and enable **Read questions aloud** in the sidebar.
+
+---
+
 ## Lesson Design
 
 Each lesson has:
