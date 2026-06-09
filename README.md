@@ -1,0 +1,1 @@
+CodeQuest AI Tutor is a beginner-friendly Python learning app designed to teach kids ages 8–17 how to code. The app uses an AI-style assistant to break lessons into simple steps, guide students through practice challenges, quiz their understanding, and reward progress with badges.
