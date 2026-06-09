@@ -1,0 +1,12 @@
+{
+  "Student": {
+    "completed_lessons": [
+      "explorer_001",
+      "explorer_002"
+    ],
+    "badges": [
+      "First Line Coder",
+      "Sequence Starter"
+    ]
+  }
+}
