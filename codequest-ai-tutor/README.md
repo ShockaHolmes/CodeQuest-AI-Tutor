@@ -97,11 +97,25 @@ python -m venv .venv
 pip install -r requirements.txt
 ```
 
+If you are not activating the virtual environment in your shell, use the local environment directly:
+
+```bash
+./.venv/bin/pip install -r requirements.txt
+```
+
 ### 4. Run the app
 
 ```bash
 streamlit run app/main.py
 ```
+
+Or run Streamlit through the project-local Python interpreter:
+
+```bash
+./.venv/bin/python -m streamlit run app/main.py
+```
+
+On macOS, you can also double-click [start.command](/Users/shocka/CodeQuest-AI-Tutor/start.command) from the workspace root to start the app and open the dashboard automatically.
 
 ---
 
