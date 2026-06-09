@@ -1,0 +1,122 @@
+[
+  {
+    "id": "explorer_001",
+    "track": "Explorer",
+    "title": "What Is Coding?",
+    "goal": "Understand that coding means giving instructions to a computer.",
+    "steps": [
+      "A computer needs clear instructions.",
+      "Coding is how we write those instructions.",
+      "Python is a coding language that is friendly for beginners.",
+      "A program is a set of instructions that runs from top to bottom."
+    ],
+    "example_code": "print(\"Hello, coder!\")",
+    "practice": "Write a print statement that says your name.",
+    "hint": "Use print() and put your message inside quotation marks.",
+    "quiz": {
+      "question": "What Python command can show words on the screen?",
+      "answer": "print"
+    },
+    "badge": "First Line Coder"
+  },
+  {
+    "id": "explorer_002",
+    "track": "Explorer",
+    "title": "Patterns and Sequences",
+    "goal": "Learn that programs follow an order, just like steps in a recipe.",
+    "steps": [
+      "Programs run one line at a time.",
+      "The first line happens before the second line.",
+      "Changing the order can change what the program does.",
+      "Coders think carefully about the order of their steps."
+    ],
+    "example_code": "print(\"Wake up\")\nprint(\"Brush teeth\")\nprint(\"Start coding\")",
+    "practice": "Write three print lines that show your morning routine.",
+    "hint": "Use three print statements, one under another.",
+    "quiz": {
+      "question": "Does Python usually run code from top to bottom? Answer yes or no.",
+      "answer": "yes"
+    },
+    "badge": "Sequence Starter"
+  },
+  {
+    "id": "builder_001",
+    "track": "Builder",
+    "title": "Variables Store Information",
+    "goal": "Use variables to save names, numbers, and other information.",
+    "steps": [
+      "A variable is like a labeled box.",
+      "The label is the variable name.",
+      "The value is what is inside the box.",
+      "You can use variables later in your program."
+    ],
+    "example_code": "player_name = \"Ava\"\nscore = 10\nprint(player_name)\nprint(score)",
+    "practice": "Create a variable for your name and a variable for your favorite number. Print both.",
+    "hint": "Use name = \"Your Name\" and number = 7, then print them.",
+    "quiz": {
+      "question": "What is the name for a labeled place that stores information in Python?",
+      "answer": "variable"
+    },
+    "badge": "Variable Builder"
+  },
+  {
+    "id": "builder_002",
+    "track": "Builder",
+    "title": "Making Choices With If Statements",
+    "goal": "Use if statements to let a program make decisions.",
+    "steps": [
+      "Programs can make choices.",
+      "An if statement checks if something is true.",
+      "If it is true, the indented code runs.",
+      "If it is false, Python can skip it or use else."
+    ],
+    "example_code": "score = 85\nif score >= 70:\n    print(\"You passed!\")\nelse:\n    print(\"Keep practicing!\")",
+    "practice": "Create an age variable. If the age is 13 or higher, print 'Teen coder'. Otherwise, print 'Young coder'.",
+    "hint": "Use if age >= 13: and remember to indent the print line.",
+    "quiz": {
+      "question": "What Python word starts a decision statement?",
+      "answer": "if"
+    },
+    "badge": "Decision Maker"
+  },
+  {
+    "id": "creator_001",
+    "track": "Creator",
+    "title": "Functions Help Organize Code",
+    "goal": "Create a function to reuse code and keep programs organized.",
+    "steps": [
+      "A function is a named block of code.",
+      "Functions help you avoid repeating yourself.",
+      "Use def to create a function.",
+      "Call the function by writing its name with parentheses."
+    ],
+    "example_code": "def greet_player(name):\n    print(f\"Welcome, {name}!\")\n\ngreet_player(\"Maya\")",
+    "practice": "Write a function called show_score that prints a player's score.",
+    "hint": "Start with def show_score(score): then indent the print line.",
+    "quiz": {
+      "question": "What Python keyword is used to create a function?",
+      "answer": "def"
+    },
+    "badge": "Function Creator"
+  },
+  {
+    "id": "creator_002",
+    "track": "Creator",
+    "title": "Lists Hold Many Items",
+    "goal": "Use a list to store more than one value.",
+    "steps": [
+      "A list can hold many values in one variable.",
+      "Lists use square brackets.",
+      "Items are separated by commas.",
+      "You can loop through a list to use each item."
+    ],
+    "example_code": "skills = [\"Python\", \"HTML\", \"Game Design\"]\nfor skill in skills:\n    print(skill)",
+    "practice": "Create a list of three games or hobbies. Use a for loop to print each one.",
+    "hint": "Use square brackets for the list and for item in list_name to loop.",
+    "quiz": {
+      "question": "What symbol type does Python use to create a list: parentheses, brackets, or braces?",
+      "answer": "brackets"
+    },
+    "badge": "List Master"
+  }
+]
