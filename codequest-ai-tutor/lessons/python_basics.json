@@ -118,5 +118,205 @@
       "answer": "brackets"
     },
     "badge": "List Master"
+  },
+  {
+    "id": "explorer_003",
+    "track": "Explorer",
+    "title": "Commands and Results",
+    "goal": "See how one command creates one visible result on the screen.",
+    "steps": [
+      "A command tells Python what to do.",
+      "print() is a command that shows text.",
+      "Each print line can show a different message.",
+      "Running code lets you check your result right away."
+    ],
+    "example_code": "print(\"Level 1\")\nprint(\"Level 2\")\nprint(\"Level 3\")",
+    "practice": "Write two print lines. The first should say 'Start' and the second should say 'Finish'.",
+    "hint": "Use one print() per line and keep the words inside quotation marks.",
+    "quiz": {
+      "question": "What function shows text on the screen in Python?",
+      "answer": "print"
+    },
+    "badge": "Command Explorer"
+  },
+  {
+    "id": "explorer_004",
+    "track": "Explorer",
+    "title": "Strings Are Text",
+    "goal": "Understand that strings are text values written with quotes.",
+    "steps": [
+      "Words and sentences in code are called strings.",
+      "Strings must go inside quotation marks.",
+      "Python can print strings exactly as written.",
+      "You can store a string in a variable and reuse it."
+    ],
+    "example_code": "favorite_food = \"pizza\"\nprint(favorite_food)",
+    "practice": "Create a variable called city that stores your city name, then print city.",
+    "hint": "Example: city = \"Miami\" and then print(city).",
+    "quiz": {
+      "question": "What are words in code called when written in quotes?",
+      "answer": "string"
+    },
+    "badge": "String Spotter"
+  },
+  {
+    "id": "explorer_005",
+    "track": "Explorer",
+    "title": "Numbers in Python",
+    "goal": "Use numbers in code and do simple math with print.",
+    "steps": [
+      "Numbers can be stored in variables.",
+      "You can add numbers with +.",
+      "You can subtract numbers with -.",
+      "print() can show math results."
+    ],
+    "example_code": "apples = 4\nmore_apples = 3\nprint(apples + more_apples)",
+    "practice": "Create two number variables and print their sum.",
+    "hint": "Try number1 = 5 and number2 = 2, then print(number1 + number2).",
+    "quiz": {
+      "question": "Which symbol adds numbers in Python?",
+      "answer": "+"
+    },
+    "badge": "Number Ninja"
+  },
+  {
+    "id": "builder_003",
+    "track": "Builder",
+    "title": "Getting User Input",
+    "goal": "Collect information from a user with input().",
+    "steps": [
+      "Programs can ask questions with input().",
+      "input() gives back text the user types.",
+      "You can store the answer in a variable.",
+      "Then you can print a custom message using that answer."
+    ],
+    "example_code": "name = input(\"What is your name? \")\nprint(f\"Hi, {name}!\")",
+    "practice": "Ask the user for their favorite game and print a sentence using their answer.",
+    "hint": "Store input in a variable like game = input(...), then print(game).",
+    "quiz": {
+      "question": "What function is used to get keyboard input from a user?",
+      "answer": "input"
+    },
+    "badge": "Input Collector"
+  },
+  {
+    "id": "builder_004",
+    "track": "Builder",
+    "title": "Repeat Actions With While Loops",
+    "goal": "Use a while loop to repeat code while a condition is true.",
+    "steps": [
+      "A while loop repeats until a condition becomes false.",
+      "You must update variables inside the loop.",
+      "If you do not update, the loop may run forever.",
+      "while loops are useful for counters and repeated tasks."
+    ],
+    "example_code": "count = 1\nwhile count <= 3:\n    print(count)\n    count += 1",
+    "practice": "Write a while loop that prints numbers 1 through 5.",
+    "hint": "Start with count = 1, use while count <= 5, and increase count each round.",
+    "quiz": {
+      "question": "Which keyword starts a loop that runs while a condition is true?",
+      "answer": "while"
+    },
+    "badge": "Loop Builder"
+  },
+  {
+    "id": "builder_005",
+    "track": "Builder",
+    "title": "For Loops and Range",
+    "goal": "Use for with range() to repeat a fixed number of times.",
+    "steps": [
+      "A for loop can run a set number of times.",
+      "range(5) creates numbers from 0 to 4.",
+      "The loop variable changes each round.",
+      "for loops are great for counting and repeated output."
+    ],
+    "example_code": "for num in range(1, 6):\n    print(num)",
+    "practice": "Use a for loop with range to print numbers 1 to 4.",
+    "hint": "Try: for num in range(1, 5):",
+    "quiz": {
+      "question": "What function is commonly used with for loops to generate counting numbers?",
+      "answer": "range"
+    },
+    "badge": "For Loop Hero"
+  },
+  {
+    "id": "creator_003",
+    "track": "Creator",
+    "title": "Function Parameters",
+    "goal": "Pass values into functions so they can work with different inputs.",
+    "steps": [
+      "Parameters are variable names inside a function definition.",
+      "Arguments are the values you pass when calling the function.",
+      "Parameters make one function reusable for many tasks.",
+      "You can pass text, numbers, or other data types."
+    ],
+    "example_code": "def cheer(team):\n    print(f\"Go {team}!\")\n\ncheer(\"Lions\")\ncheer(\"Sharks\")",
+    "practice": "Create a function called double_number that takes one parameter and prints the value times 2.",
+    "hint": "Use def double_number(n): and inside print(n * 2).",
+    "quiz": {
+      "question": "What do we call the values sent into a function when it is called?",
+      "answer": "arguments"
+    },
+    "badge": "Parameter Pro"
+  },
+  {
+    "id": "creator_004",
+    "track": "Creator",
+    "title": "Dictionaries Store Key-Value Data",
+    "goal": "Use dictionaries to organize related information with labels.",
+    "steps": [
+      "A dictionary stores data as key-value pairs.",
+      "Keys are labels, and values are the stored data.",
+      "Dictionaries use curly braces.",
+      "You can access a value by its key."
+    ],
+    "example_code": "player = {\"name\": \"Noah\", \"score\": 42}\nprint(player[\"name\"])\nprint(player[\"score\"])",
+    "practice": "Make a dictionary for a book with keys title and pages, then print both values.",
+    "hint": "Example: book = {\"title\": \"Sky\", \"pages\": 120}",
+    "quiz": {
+      "question": "What data structure uses keys to look up values?",
+      "answer": "dictionary"
+    },
+    "badge": "Data Organizer"
+  },
+  {
+    "id": "creator_005",
+    "track": "Creator",
+    "title": "Nested Loops for Patterns",
+    "goal": "Use a loop inside another loop to build repeated patterns.",
+    "steps": [
+      "A nested loop is a loop inside another loop.",
+      "The inner loop completes all its rounds each time the outer loop runs.",
+      "Nested loops are useful for grids, tables, and repeated patterns.",
+      "Start simple to avoid confusion."
+    ],
+    "example_code": "for row in range(1, 4):\n    for col in range(1, 4):\n        print(f\"({row},{col})\")",
+    "practice": "Use nested loops to print coordinates for a 2 by 3 grid.",
+    "hint": "Use one loop for rows and one for columns, then print both values.",
+    "quiz": {
+      "question": "What is a loop inside another loop called?",
+      "answer": "nested loop"
+    },
+    "badge": "Pattern Architect"
+  },
+  {
+    "id": "creator_006",
+    "track": "Creator",
+    "title": "Mini Project: Quiz Score Tracker",
+    "goal": "Combine variables, loops, and conditionals in a small project.",
+    "steps": [
+      "Start with a score variable set to 0.",
+      "Ask several questions in a loop.",
+      "Use if statements to add points for correct answers.",
+      "Print the final score at the end."
+    ],
+    "example_code": "score = 0\nanswers = [\"a\", \"b\", \"c\"]\nfor answer in answers:\n    if answer == \"a\":\n        score += 1\nprint(score)",
+    "practice": "Design a 3-question quiz plan in code comments, then create variables and an if statement that update score.",
+    "hint": "Break it into parts: questions, checking answers, then final score output.",
+    "quiz": {
+      "question": "Which variable usually keeps track of points in a quiz program?",
+      "answer": "score"
+    },
+    "badge": "Project Starter"
   }
 ]

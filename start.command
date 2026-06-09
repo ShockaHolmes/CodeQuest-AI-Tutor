@@ -2,6 +2,15 @@
 
 set -euo pipefail
 
+# Load user shell environment so API keys from ~/.zshrc are available
+# when this script is launched outside an interactive terminal.
+if [[ -f "$HOME/.zprofile" ]]; then
+  source "$HOME/.zprofile"
+fi
+if [[ -f "$HOME/.zshrc" ]]; then
+  source "$HOME/.zshrc"
+fi
+
 SCRIPT_DIR="$(cd -- "$(dirname -- "$0")" && pwd)"
 APP_DIR="$SCRIPT_DIR/codequest-ai-tutor"
 ROOT_VENV_PYTHON="$SCRIPT_DIR/.venv/bin/python"
