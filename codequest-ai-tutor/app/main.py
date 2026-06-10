@@ -41,8 +41,28 @@ with st.sidebar:
         value="kdmDKE6EkgrWrrykO9Qt",
         help="Set the voice ID from your ElevenLabs account.",
     )
-    if voice_enabled and not has_elevenlabs_key():
+    api_key_available = has_elevenlabs_key()
+    if api_key_available:
+        st.caption("ElevenLabs key detected.")
+    else:
         st.warning("Set ELEVENLABS_API_KEY in your environment to enable voice.")
+
+    if st.button(
+        "Test ElevenLabs Connection",
+        key="test_elevenlabs",
+        disabled=not api_key_available,
+        help="Runs a quick text-to-speech request to verify your API key.",
+    ):
+        test_speech = synthesize_speech(
+            "Connection test from CodeQuest.",
+            voice_id=voice_id,
+        )
+        if test_speech.audio_bytes:
+            st.success("ElevenLabs connection successful.")
+        else:
+            st.error(test_speech.error_message)
+
+voice_ready = voice_enabled and api_key_available
 
 st.info(engine.welcome_student(name, track))
 
@@ -51,7 +71,7 @@ lesson_titles = [lesson["title"] for lesson in lessons]
 selected_title = st.selectbox("Choose a lesson", lesson_titles)
 lesson = next(item for item in lessons if item["title"] == selected_title)
 
-if voice_enabled and auto_read_quiz and has_elevenlabs_key():
+if voice_ready and auto_read_quiz:
     previous_lesson_id = st.session_state.get("last_auto_read_lesson_id")
     current_lesson_id = lesson["id"]
     if previous_lesson_id != current_lesson_id:
@@ -75,6 +95,24 @@ with left:
     st.write(f"**Goal:** {lesson['goal']}")
 
     st.markdown("### Step-by-Step Lesson")
+    instructions_text = " ".join(
+        [
+            f"Step {index}. {step}"
+            for index, step in enumerate(lesson["steps"], start=1)
+        ]
+    )
+    if st.button(
+        "Read Lesson Instructions",
+        key="read_instructions",
+        disabled=not voice_ready,
+        help="Enable voice in the sidebar and set ELEVENLABS_API_KEY.",
+    ):
+        speech = synthesize_speech(instructions_text, voice_id=voice_id)
+        if speech.audio_bytes:
+            st.audio(speech.audio_bytes, format="audio/mpeg")
+        else:
+            st.error(speech.error_message)
+
     for index, step in enumerate(lesson["steps"], start=1):
         st.write(f"**Step {index}:** {step}")
 

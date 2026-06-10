@@ -109,13 +109,27 @@ If you are not activating the virtual environment in your shell, use the local e
 streamlit run app/main.py
 ```
 
-Or run Streamlit through the project-local Python interpreter:
+Or run Streamlit through the project-local Python interpreter.
+
+Mac/Linux:
 
 ```bash
 ./.venv/bin/python -m streamlit run app/main.py
 ```
 
-On macOS, you can also double-click [start.command](/Users/shocka/CodeQuest-AI-Tutor/start.command) from the workspace root to start the app and open the dashboard automatically.
+Windows (from `codequest-ai-tutor` folder):
+
+```powershell
+..\.venv\Scripts\python.exe -m streamlit run .\app\main.py
+```
+
+On macOS, you can also double-click `start.command` from the workspace root to start the app and open the dashboard automatically.
+
+On Windows, run this from the workspace root to do the same:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\start.ps1
+```
 
 ---
 
