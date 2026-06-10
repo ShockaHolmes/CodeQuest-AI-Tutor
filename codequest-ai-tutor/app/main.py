@@ -76,8 +76,8 @@ if voice_ready and auto_read_quiz:
     current_lesson_id = lesson["id"]
     if previous_lesson_id != current_lesson_id:
         speech = synthesize_speech(lesson["quiz"]["question"], voice_id=voice_id)
-        st.session_state["last_auto_read_lesson_id"] = current_lesson_id
         if speech.audio_bytes:
+            st.session_state["last_auto_read_lesson_id"] = current_lesson_id
             st.session_state["auto_quiz_audio"] = speech.audio_bytes
             st.session_state["auto_quiz_error"] = None
         else:

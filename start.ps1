@@ -1,5 +1,5 @@
 param(
-    [int]$IdleShutdownSeconds = 45,
+    [int]$IdleShutdownSeconds = 0,
     [int]$IdlePollSeconds = 5
 )
 
@@ -72,7 +72,7 @@ if (-not (Test-Path $AppDir)) {
 $pythonCmd = Get-PythonCommand
 Set-Location $AppDir
 
-$streamlitCheck = & $pythonCmd -c "import streamlit" 2>$null
+& $pythonCmd -c "import streamlit" 2>$null
 if ($LASTEXITCODE -ne 0) {
     throw "Streamlit is not installed for $pythonCmd. Run: $pythonCmd -m pip install -r requirements.txt"
 }
@@ -105,7 +105,7 @@ if (-not (Test-ServerReady -Url $HealthUrl)) {
 }
 
 if ($IdleShutdownSeconds -le 0) {
-    Write-Host 'Idle auto-shutdown disabled. Streamlit server will keep running.'
+    Write-Host 'Idle auto-shutdown is disabled by default. Set -IdleShutdownSeconds to enable it.'
     exit 0
 }
 

@@ -2,6 +2,7 @@ from __future__ import annotations
 
 import json
 import os
+import socket
 from dataclasses import dataclass
 from urllib import error, request
 
@@ -75,3 +76,8 @@ def synthesize_speech(
         return VoiceResult(error_message=f"{status_text} {details}".strip())
     except error.URLError as exc:
         return VoiceResult(error_message=f"Unable to connect to ElevenLabs: {exc.reason}")
+    except (TimeoutError, ConnectionError, ConnectionResetError, socket.timeout) as exc:
+        return VoiceResult(error_message=f"Unable to connect to ElevenLabs: {exc}")
+    except Exception:
+        # Keep the tutor app responsive even if the TTS provider fails unexpectedly.
+        return VoiceResult(error_message="Unexpected voice service error. Please try again.")
