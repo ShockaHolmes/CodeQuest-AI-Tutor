@@ -17,6 +17,21 @@ ROOT_VENV_PYTHON="$SCRIPT_DIR/.venv/bin/python"
 APP_VENV_PYTHON="$APP_DIR/.venv/bin/python"
 APP_URL="http://127.0.0.1:8501"
 HEALTH_URL="$APP_URL/_stcore/health"
+LOG_FILE="/tmp/codequest-ai-tutor.log"
+
+open_dashboard() {
+  if command -v open >/dev/null 2>&1; then
+    open "$APP_URL"
+    return 0
+  fi
+
+  if command -v xdg-open >/dev/null 2>&1; then
+    xdg-open "$APP_URL" >/dev/null 2>&1 &
+    return 0
+  fi
+
+  "$PYTHON_CMD" -c "import webbrowser; webbrowser.open('$APP_URL')" >/dev/null 2>&1 || true
+}
 
 if [[ -x "$ROOT_VENV_PYTHON" ]]; then
   PYTHON_CMD="$ROOT_VENV_PYTHON"
@@ -49,23 +64,23 @@ fi
 
 if curl -fsS "$HEALTH_URL" >/dev/null 2>&1; then
   echo "CodeQuest AI Tutor is already running. Opening dashboard..."
-  open "$APP_URL"
+  open_dashboard
   exit 0
 fi
 
 echo "Starting CodeQuest AI Tutor..."
-"$PYTHON_CMD" -m streamlit run app/main.py --server.headless true > /tmp/codequest-ai-tutor.log 2>&1 &
+"$PYTHON_CMD" -m streamlit run app/main.py --server.headless true > "$LOG_FILE" 2>&1 &
 
 for _attempt in {1..30}; do
   if curl -fsS "$HEALTH_URL" >/dev/null 2>&1; then
     echo "Dashboard is ready. Opening browser..."
-    open "$APP_URL"
+    open_dashboard
     exit 0
   fi
   sleep 1
 done
 
 echo "The app server did not become ready in time."
-echo "Check the log at /tmp/codequest-ai-tutor.log"
+echo "Check the log at $LOG_FILE"
 read -r "?Press Enter to close this window..."
 exit 1
